@@ -7,14 +7,28 @@
 <body>
 {{^username}}
 <form action="login" method="post">
-    <input type="text" placeholder="Enter your name" name="username"/>
+    <input type="text" placeholder="Enter your name" name="username" size="50"/>
     <button type="submit">Login</button>
 </form>
 {{/username}}
+{{#username}}
+<form action="add-message" method="post">
+    <input type="text" placeholder="Enter your message" name="text" size="50"/>
+    <button type="submit">Submit</button>
+</form>
+{{/username}}<br>
 
-{{#username
+{{#username}}
 Messages by {{.}}:
-{{/username}}
-{{id}}. {{text}} <button type="delete">Delete</button>
+{{/username}}<br>
+
+
+{{#messages}}
+{{id}}. {{text}}
+<form action="delete-message" method="post" style="display: inline;">
+    <input type="hidden" name="id" value="{{id}}">
+    <button type="submit">Delete</button>
+</form><br>
+{{/messages}}
 </body>
 </html>
