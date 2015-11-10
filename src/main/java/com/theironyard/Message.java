@@ -1,17 +1,27 @@
 package com.theironyard;
 
+import javax.persistence.*;
 /**
  * Created by BennettIronYard on 11/9/15.
  */
+@Entity
 public class Message {
-    int id;
+    @Id
+    @GeneratedValue
+    Integer id;
+
     String text;
 
-    public Message(int id, String text) {
-        this.id = id;
+    public Message() {
+
+    }//"this is a blank constructor"
+
+   /* public Message(String text) { //constructors
+        //this.id = id;
         this.text = text;
     }
-
+    */
+    /*
     public int getId() {
         return id;
     }
@@ -19,4 +29,5 @@ public class Message {
     public String getText() {
         return text;
     }
+    */
 }
