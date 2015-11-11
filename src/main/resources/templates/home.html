@@ -19,11 +19,8 @@
 </form>
 {{/username}}<br>
 
-{{#username}}
-Messages by {{.}}:
-{{/username}}<br>
-
-
+{{#username}}<br>
+Messages by {{.}}:<br>
 {{#messages}}
 {{id}}. {{text}}
 <form action="edit-message" method="post" style="display: inline;">
@@ -36,5 +33,6 @@ Messages by {{.}}:
     <button type="submit">Delete</button>
 </form><br>
 {{/messages}}
+{{/username}}
 </body>
 </html>

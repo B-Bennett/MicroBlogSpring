@@ -39,7 +39,7 @@ public class MicroBlogController {
     @RequestMapping("/add-message")
     public String addMessages(String text) { //It should take the message text as an argument
         Message message = new Message();    //(messages.size() + 1, text);
-        message.text = text;
+        message.text = text; //or msgtext
         messages.save(message); //It should create a Message object and add it to the arraylist
         return "redirect:/"; //It should return a redirect to /
     }
